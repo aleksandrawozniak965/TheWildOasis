@@ -4,7 +4,6 @@ export async function getCabins() {
   const { data, error } = await supabase.from("cabins").select("*");
 
   if (error) {
-    console.error("Supabase error:", error);
     throw new Error("Cabins could not be created");
   }
 
@@ -18,7 +17,7 @@ export async function createCabin(newCabin) {
     console.error(error);
     throw new Error("Cabins could not be created");
   }
-  console.log("Data from Supabase:", data);
+
   return data;
 }
 
